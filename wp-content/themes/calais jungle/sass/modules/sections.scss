@@ -1,0 +1,157 @@
+// =================================================================
+// 	Calais Jungle
+// 	Sections
+// =================================================================
+
+.page-description {
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+
+	.col-6 {
+		float: right;
+	}
+
+	.col-4 {
+		float: left;
+		margin-bottom: 0;
+	}
+
+	.description-holder {
+		box-sizing: border-box;
+		padding: 25px;
+		background: $colorOne;
+		cursor: pointer;
+
+		h3:after {
+			display: block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			content: "";
+			background-image: url('img/arrow-down.svg');
+			background-size: 100% 100%;
+			background-position: 0 0;
+		}
+
+		p {
+			color: #fff;
+			line-height: 1.4;
+			font-size: 0.95em;
+			display: block;
+			display: none;
+		}
+	}
+
+	.description-holder.active {
+
+		h3 {
+			margin-bottom: 25px;
+		}
+
+		h3:after {
+			@include transform(rotate(180deg));
+		}
+
+		p {
+			display: block;
+		}
+	}
+
+	@include mq("small", "max-width") {
+		.col-6 {
+			width: 100%;
+		}
+
+		.description-holder {
+			max-height: 400px;
+			overflow: scroll;
+		}
+	}
+}
+
+.panorama-section {
+	margin-top: 68px;
+}
+
+.cut-out-map {
+	width: 100%;
+	height: 100vh;
+
+	img.map {
+		width: 1400px;
+		height: auto;
+	}
+
+	.map-marker {
+		width: 20px;
+		height: 20px;
+		background: $colorOne;
+		display: block;
+		position: absolute;
+		cursor: pointer;
+		@include border-radius(20px);
+	}
+
+	.cutout-image {
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		display: none;
+
+		img {
+			width: 70%;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.street-view-section {
+	overflow: hidden;
+	width: 100%;
+	height: calc(100vh - 66px);
+	margin-top: 66px;
+}
+
+.video-full {
+	overflow: hidden;
+	width: 100%;
+	height: calc(100vh - 66px);
+	margin-top: 66px;
+
+	@include mq("small", "max-width") {
+		margin-top: 150px;
+	}
+}
+
+
+.video-half-holder {
+	margin-top: 66px;
+
+	.video-half {
+		width: 50%;
+		float: left;
+
+		.embetter {
+			 @include aspect-ratio(16, 9);
+			 position: relative;
+			 
+			 img {
+			 	position: absolute;
+			 	top: 0;
+			 	left: 0;
+			 }
+		}
+	}
+}
+

@@ -1,0 +1,85 @@
+// =================================================================
+// 	Calais Jungle
+// 	Header
+// =================================================================
+
+header {
+	position: fixed;
+	width: 100%;
+	background: $colorBlack;
+	height: auto;
+	overflow: auto;
+	top: 0;
+	padding: 15px 0;
+	z-index: 100;
+
+	h1 {
+		float: left;
+	}
+
+	nav {
+		float: right;
+
+		ul {
+			padding: 0;
+		}
+
+		ul li {
+			padding: 0;
+			float: left;
+			list-style-type: none;
+		}
+
+		ul li a {
+			text-indent: -9999999px;
+			display: block;
+			float: left;
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			margin: 0;
+			padding: 0;
+			margin-top: 5px;
+			margin-right: 25px;
+			width: 30px;	
+		}
+
+		ul li a:after {
+			float: left;
+			content: "";
+			display: block;
+			width: 30px;
+			margin-top: -7px;
+			height: 30px;
+			@include border-radius(100px);
+			background: #fff;
+			padding: 0;
+
+		}
+
+		ul li a:hover {
+			text-indent: 0;
+			width: auto;
+		}
+
+		ul li a:after {
+			margin-right: 25px;
+		}
+
+		.current_page_item a:after {
+			background: $colorOne;
+		}
+	}
+
+	@include mq("small", "max-width") {
+		nav {
+			float: left;
+			margin-top: 15px;
+		}
+
+		nav ul li a {
+			margin-right: 10px;
+			margin-left: 0;
+		}
+	}
+}
